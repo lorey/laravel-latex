@@ -18,7 +18,23 @@ The typical use case is when you're generating LaTeX code and receive untrusted 
 
 ## Installation
 
-This package is not on packagist, so you have to install it manually:
-* Create a `packages` diretory inside your laravel folder
+This package is not on packagist, so you have to install it manually
+
+### Copy files
+* Create a `packages` directory inside your laravel folder
 * Copy the repository contents into a directory named `packages/lorey/laravel-latex`
-* Register `Lorey\Latex\LatexServiceProvider::class` as a provider and `'Latex' => Lorey\Latex\Facades\Latex::class` as an alias inside `config/app.php`
+
+### Extend your composer.json file
+Find the `autoload` key and add the given key value pair inside `psr-4`: 
+
+    "autoload": {
+          ...
+          "psr-4": {
+              ...
+              "Lorey\\Latex\\": "packages/lorey/laravel-latex/src"
+          }
+      },
+### Register the ServiceProvider and the alias
+Open up `config/app.php` and add `Lorey\Latex\LatexServiceProvider::class` as a provider. Then add `'Latex' => Lorey\Latex\Facades\Latex::class` as an alias inside `config/app.php`.
+
+That's it. You should now the able to invoke laravel-latex like in the examples.
