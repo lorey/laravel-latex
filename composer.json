@@ -1,0 +1,24 @@
+{
+    "name": "lorey/laravel-latex",
+    "description": "A Laravel package for handling LaTeX input and output",
+    "keywords": ["laravel", "latex", "escaping"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karl Lorey",
+            "email": "karl@germanitjobs.com",
+            "homepage": "http://germanitjobs.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lorey\\Latex\\": "src/"
+        },
+        "classmap": [
+        ]
+    },
+    "minimum-stability": "dev"
+}
